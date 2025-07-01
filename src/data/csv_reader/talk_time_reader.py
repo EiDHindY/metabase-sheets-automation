@@ -1,9 +1,9 @@
 # src/data/csv_reader/talk_time_reader.py
 
-from typing import List, Dict, Optional
+from typing import List, Dict
 from .csv_loader import load_csv_dicts
 
-def extract_talk_time(path: str, agent: str) -> Optional[float]:
+def extract_talk_time(path: str, agent: str) -> float:
     """
     Return total talk time in minutes for `agent`.
     Raises RuntimeError if required columns are missing.
@@ -24,4 +24,4 @@ def extract_talk_time(path: str, agent: str) -> Optional[float]:
             return float(row["Sum of Duration in Minutes"])
     
     # Agent not found → no talk time recorded
-    return None
+    return 0.0
