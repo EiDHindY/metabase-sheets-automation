@@ -14,7 +14,10 @@
   ├── 📁src 
   │   ├── 📁data/
   |   │   ├── 📁csv_reader/
-  |   |   │   ├── csv_loader.py
+  |   │   │    ├── csv_loader.py
+  |   │   │    ├── talk_time_reader.py
+  |   |   │    └── __init__.py
+  |   │   └── __init__.py
   │   └── __init__.py
   ├── 📁raw-data/
   │   ├── 📁input/
@@ -43,4 +46,5 @@
 1- merged the current branch to the main
 2- started a new one to work on the csv logic
 3- implemented the csv loader login in  src/data/csv_reader/csv_loader.py
+4- impleneted the csv talk_time_extractor in  src/data/csv_reader/talk_time_reader.py
 
