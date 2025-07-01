@@ -2,10 +2,10 @@
 __pycache__/
 *.py[codz]
 *$py.class
-
+all/
 # C extensions
 *.so
-
+service_account/
 # Distribution / packaging
 .Python
 build/
@@ -136,6 +136,7 @@ celerybeat.pid
 
 # Environments
 .env
+.env/
 .envrc
 .venv
 env/
