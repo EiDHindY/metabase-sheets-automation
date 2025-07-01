@@ -3,6 +3,7 @@ __pycache__/
 *.py[codz]
 *$py.class
 all/
+raw-data/
 # C extensions
 *.so
 service_account/

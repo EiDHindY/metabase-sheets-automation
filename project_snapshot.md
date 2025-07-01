@@ -12,14 +12,17 @@
   ├── 📁config 
   │   └── __init__.py
   ├── 📁src 
+  │   ├── 📁data/
+  |   │   ├── 📁csv_reader/
+  |   |   │   ├── csv_loader.py
   │   └── __init__.py
-  ├── 📁 data/
-  │   ├── input/
-  │   │   ├── leads/
-  │   │   ├── talk-time/
-  │   │   └── dials-made/
-  │   ├── processed/
-  │   └── team/
+  ├── 📁raw-data/
+  │   ├── 📁input/
+  │   │   ├── 📁leads/
+  │   │   ├── 📁talk-time/
+  │   │   └── 📁dials-made/
+  │   ├── 📁processed/
+  │   └── 📁team/
   ├── 📁tests 
   │   └── __init__.py
   ├── .env
@@ -36,4 +39,8 @@
 4- added both the .env and .env.example
 5- created a new branch on github and pushed that to it
 
+<!-- csv logic -->
+1- merged the current branch to the main
+2- started a new one to work on the csv logic
+3- implemented the csv loader login in  src/data/csv_reader/csv_loader.py
 
