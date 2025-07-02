@@ -29,7 +29,7 @@ def process_agent_data(
     leads: int = extract_leads(leads_path, agent_name)
 
     return{
-        "agnet_name":agent_name,
+        "agent_name":agent_name,
         "talk_time": talk_time,
         "dials":dials,
         "leads":leads
