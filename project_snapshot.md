@@ -20,6 +20,10 @@
   |   │   │    ├── leads_reader.py
   |   |   │    └── __init__.py
   |   │   └── __init__.py
+  │   ├── 📁core/
+  |   │   ├── 📁services/
+  |   │   │    ├── agent_data_service.py
+  |   |   │    └── __init__.py
   │   └── __init__.py
   ├── 📁raw-data/
   │   ├── 📁input/
@@ -52,4 +56,7 @@
 5- implemnted the csv dials_reader extractor in src/data/csv_reader/dials_reader.py
 6- implemnted the csv leads_reader extractor in src/data/csv_reader/leads_reader.py
 
-
+<!-- agent_data_processing -->
+1- merged the current branch to the main
+2- started a new one to work on the core logic
+3- implemented the agent_data_service in src/core/services/agent_data_service.py
