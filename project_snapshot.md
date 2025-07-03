@@ -26,6 +26,8 @@
   |   │   ├── 📁file_manager/
   |   │   │    ├── file_manager.py
   |   |   │    └── __init__.py
+  |   │   ├── 📁sheets_client/
+  |   │   │    ├── sheets_client.py
   |   │   └── __init__.py
   │   ├── 📁core/
   |   │   ├── 📁services/
@@ -72,4 +74,7 @@
 
 <!-- agent_data_processing -->
 1- refactored the file_manager.py and the agent_data_service.py to silently ignore if the leads file doesn't exist and leave it to the user to enter it
-2- created a cli.py file in src/ui/cli/cli.py
+2- created a cli.py file in src/ui/cli/cli.p
+
+<!-- agent_data_processing -->
+1- implemented the googlesheet logic in src/data/sheets_client/sheets_client.py (the authrization and the populating logic)
