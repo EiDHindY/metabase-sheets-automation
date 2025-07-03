@@ -43,7 +43,6 @@ def process_daily_files(
     if missing:
         raise FileNotFoundError(f"Missing required CSVs: {missing}")
 
-    assert team_members_file and talk_time_file and dials_made_file and leads_file # just to silence pylance type checking
     # 3. Process team data
     result: List[Dict[str, Any]] = process_team_data(
         team_members_file,

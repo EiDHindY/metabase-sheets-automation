@@ -1,6 +1,6 @@
 # src/core/services/team_data_service.py
 
-from typing import List, Dict, Any
+from typing import List, Dict, Any, Optional
 from src.data.csv_reader.team_member import load_team_members
 from .agent_data_service import process_agent_data
 
@@ -8,7 +8,7 @@ def process_team_data(
         team_path: str,
         talk_time_path: str,
         dials_made_path: str,
-        leads_path: str
+        leads_path: Optional[str] = None
 ) -> List[Dict[str,Any]]:
     """
     Load all team members and process each one’s CSV data.
