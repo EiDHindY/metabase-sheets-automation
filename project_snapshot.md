@@ -12,12 +12,19 @@
   ├── 📁config 
   │   └── __init__.py
   ├── 📁src 
+  │   ├── 📁ui/
+  |   │   ├── 📁cli/
+  |   │   │    ├── cli.py
   │   ├── 📁data/
   |   │   ├── 📁csv_reader/
   |   │   │    ├── csv_loader.py
   |   │   │    ├── talk_time_reader.py
   |   │   │    ├── dials_reader.py
   |   │   │    ├── leads_reader.py
+  |   │   │    ├── team_member.py
+  |   |   │    └── __init__.py
+  |   │   ├── 📁file_manager/
+  |   │   │    ├── file_manager.py
   |   |   │    └── __init__.py
   |   │   └── __init__.py
   │   ├── 📁core/
@@ -60,3 +67,9 @@
 1- merged the current branch to the main
 2- started a new one to work on the core logic
 3- implemented the agent_data_service in src/core/services/agent_data_service.py
+4- implemented the team_member service in src/data/csv_reader/team_member.py
+5- implemented the file_manger.py file in src/data/file_manager/file_manager.py
+
+<!-- agent_data_processing -->
+1- refactored the file_manager.py and the agent_data_service.py to silently ignore if the leads file doesn't exist and leave it to the user to enter it
+2- created a cli.py file in src/ui/cli/cli.py

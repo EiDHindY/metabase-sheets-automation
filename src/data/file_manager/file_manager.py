@@ -36,17 +36,13 @@ def process_daily_files(
     team_members_file: Optional[str] = _get_single_file(team_members_dir)
 
     # 2. Ensure all files are present
-    missing: List[Optional[str]] = [
-        name for name, path in
-        [
-            ("leads", leads_file),
-            ("talk time", talk_time_file),
-            ("dials made", dials_made_file),
-            ("team members", team_members_file)
-        ]if not path
-    ]
+    missing:List[str] = []
+    if not talk_time_file: missing.append("talk time")
+    if not dials_made_file: missing.append("dials-made")
+    if not team_members_file: missing.append("team members")
     if missing:
-        raise RuntimeError(f"missing CSV files: {missing}")
+        raise FileNotFoundError(f"Missing required CSVs: {missing}")
+
     assert team_members_file and talk_time_file and dials_made_file and leads_file # just to silence pylance type checking
     # 3. Process team data
     result: List[Dict[str, Any]] = process_team_data(
