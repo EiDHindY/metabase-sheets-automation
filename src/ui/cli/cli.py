@@ -22,7 +22,7 @@ def prompt_user(record: Dict[str, Any]) -> Dict[str, Any]:
     # 2) Attendance choice
     attendance: str = ""
     while attendance not in ("1", "2", "3"):
-        attendance = input(f"Attendance for {agent} (1=Office, 2=Home, 3=UPL): ").strip()
+        attendance = input(f"Make sure to pick a number between (1, 2, 3)\nAttendance for {agent} (1=Office, 2=Home, 3=UPL): ").strip()
     attendance_map: Dict[str,str] = {"1":"Office", "2":"Home", "3":"UPL"}
 
     # 3) Leads: if extracted >0, show and allow override; if CSV missing, prompt fresh
@@ -31,16 +31,16 @@ def prompt_user(record: Dict[str, Any]) -> Dict[str, Any]:
         if default_leads:
             entry: str = input(f"Leads (found {default_leads}; press Enter to keep or type new number): ").strip()
         else:
-            entry: str = input(f"enter a lead for {agent}: ").strip()
+            entry: str = input(f"enter a lead for {agent} if any: ").strip()
         try:
             leads: int = int(entry) if entry else default_leads
             break
         except ValueError:
-            print(f"please enter a valid number")
+            print(f"please enter a valid number!")
 
     
     # 4) Notes
-    notes: str = input(f"any notes for {agent}? Press enter to skip").strip()
+    notes: str = input(f"any notes for {agent}? Press enter to skip: ").strip()
     if not notes: notes = ''
 
     # Merge all fields

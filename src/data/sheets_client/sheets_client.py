@@ -41,7 +41,7 @@ def update_sheet_for_agent(record: Dict[str, Any]) -> None:
         raise RuntimeError(f"Worksheet for agent '{agent}' not found. Please add a tab named '{agent}'.")
 
     # 2) Convert talk_time (minutes float) to HH:MM:SS
-    total_seconds: int = round(record['talk_time']) * 60
+    total_seconds: int = round(record['talk_time'] * 60)
     hours: int = total_seconds // 3600
     minutes: int = (total_seconds % 3600) // 60
     seconds: int = total_seconds % 60
@@ -64,12 +64,12 @@ def update_sheet_for_agent(record: Dict[str, Any]) -> None:
     #    Attendance cell (column B)
     attendance_cell = f"B{new_row}"
     if record['attendance'] in ("Office", "Home"):
-        color = {'red': 0.8, 'green': 1.0, 'blue': 0.8}
+        color = {'red': 0.1, 'green': 0.5, 'blue': 0.1}
     else:
-        color = {'red': 1.0, 'green': 0.8, 'blue': 0.8}
+        color = {'red': 0.5, 'green': 0.1, 'blue': 0.1}
     ws.format(attendance_cell, {'backgroundColor': color})
 
     #    Leads cell (column C)
     leads_cell = f"C{new_row}"
     if record['leads'] > 0:
-        ws.format(leads_cell, {'backgroundColor': {'red': 0.8, 'green': 1.0, 'blue': 0.8}})
+        ws.format(leads_cell, {'backgroundColor': {'red': 0.1, 'green': 0.5, 'blue': 0.1}})
