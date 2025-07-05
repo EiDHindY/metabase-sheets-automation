@@ -43,6 +43,7 @@ def process_daily_files(
     if missing:
         raise FileNotFoundError(f"Missing required CSVs: {missing}")
 
+    assert team_members_file and talk_time_file and dials_made_file
     # 3. Process team data
     result: List[Dict[str, Any]] = process_team_data(
         team_members_file,
@@ -56,6 +57,7 @@ def process_daily_files(
     archived_dir = os.path.join("raw-data", "processed", today)
     os.makedirs(archived_dir, exist_ok=True)       # ← ensure the folder exists
     for path in (talk_time_file, leads_file, dials_made_file):
+        if not path: continue
         shutil.move(path, archived_dir)
     
         # --- Inject today's date in DD/MM/YYYY format ---

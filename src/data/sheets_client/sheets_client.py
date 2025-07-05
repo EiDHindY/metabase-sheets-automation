@@ -63,12 +63,15 @@ def update_sheet_for_agent(record: Dict[str, Any]) -> None:
     #    Attendance cell (column B)
     attendance_cell = f"B{new_row}"
     if record['attendance'] in ("Office", "Home"):
-        color = {'red': 0.2, 'green': 0.4, 'blue': 0.2}
+        color = {'red': 0.416, 'green': 0.659, 'blue': 0.310}
     else:
-        color = {'red': 0.4, 'green': 0.2, 'blue': 0.2}
+        color = {'red': 0.882, 'green': 0.016, 'blue': 0.016}
     ws.format(attendance_cell, {'backgroundColor': color})
 
     #    Leads cell (column C)
     leads_cell = f"C{new_row}"
     if record['leads'] > 0:
-        ws.format(leads_cell, {'backgroundColor': {'red': 0.2, 'green': 0.4, 'blue': 0.2}})
+        ws.format(leads_cell, {'backgroundColor': {'red': 0.416, 'green': 0.659, 'blue': 0.310}})
+
+# color1 = {'red': 0.416, 'green': 0.659, 'blue': 0.310}  # #6aa84f
+# color2 = {'red': 0.882, 'green': 0.016, 'blue': 0.016}  # #e10404

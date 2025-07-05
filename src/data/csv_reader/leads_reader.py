@@ -1,9 +1,9 @@
 # src/data/csv_reader/leads_reader.py
 
-from typing import List, Dict
+from typing import List, Dict, Optional
 from .csv_loader import load_csv_dicts
 
-def extract_leads(path: str, agent: str) -> int:
+def extract_leads(path: str, agent: str) -> Optional[int]:
     """
     Read the leads CSV at `path` and return the total count
     for the given agent. Returns 0 if the agent is not present.
